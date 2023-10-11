@@ -94,7 +94,6 @@ void Kruskal(GraphType* g) {
 		e = g->edges[i];
 		uset = set_find(e.start);
 		vset = set_find(e.end);
-		
 		if (uset != vset) {
 			printf("간선(%d, %d) %d선택\n", e.start, e.end, e.weight);
 			edge_accepted++;
