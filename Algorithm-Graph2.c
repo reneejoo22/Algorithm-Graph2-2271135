@@ -59,7 +59,7 @@ void prim(GraphType* g, int s) {
 
 int main(void) {
 
-	//牢立青纺
+	//牢立青纺 
 	GraphType g = { 7,
 	{{0,29,INF,INF,INF,10,INF},
 	{29,0,16,INF,INF,INF,15},
