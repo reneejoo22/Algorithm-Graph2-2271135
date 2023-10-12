@@ -35,7 +35,7 @@ void set_union(int a, int b) {
 	
 	if (root1 != root2)		//같은 위치가 아닐 경우 합함
 		parent[root1] = root2;	//root2가 대표노드가 됨
-	//a의 parent 위치에 b의 parent 위치의 값을 넣음
+	//하위 정점은 parent 배열에서 대표 정점의 위치를 가리킴
 
 	/*
 	printf("parent\n");
@@ -104,7 +104,7 @@ void Kruskal(GraphType* g) {
 	{
 		e = g->edges[i];
 		uset = set_find(e.start);
-		vset = set_find(e.end);
+		vset = set_find(e.end);		//위치에 갔을때 하위정점이 부모노드를 가르킴
 
 		//
 		//printf("\nuset = %d, vset = %d", uset, vset);
