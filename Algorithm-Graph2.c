@@ -25,7 +25,7 @@ int getMinVertex(int n) {
 
 	int v = 0, i;
 	for(i = 0; i < n; i++)
-		if (!selected[i]) {	//값이 없을 경우
+		if (!selected[i]) {	//선택이 안된 것 중 최고로 작은
 			v = i;
 			break;
 		}
@@ -42,7 +42,7 @@ void prim(GraphType* g, int s) {
 	for (u = 0; u < g->n; u++)
 		distance[u] = INF;
 	distance[s] = 0;
-	for (i = 0; i < g->n; i++) {
+	for (i = 0; i < g->n; i++) {	//노드 수만큼
 		u = getMinVertex(g->n);	//정점의 수
 		selected[u] = True;	//값 1을 넣음
 		
@@ -59,6 +59,7 @@ void prim(GraphType* g, int s) {
 
 int main(void) {
 
+	//인접행렬
 	GraphType g = { 7,
 	{{0,29,INF,INF,INF,10,INF},
 	{29,0,16,INF,INF,INF,15},
